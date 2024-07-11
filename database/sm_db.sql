@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2021 at 07:51 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Generation Time: Jul 11, 2024 at 09:44 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `otas_db`
+-- Database: `sm_db`
 --
 
 -- --------------------------------------------------------
@@ -41,16 +41,7 @@ CREATE TABLE `archive_list` (
   `student_id` int(30) DEFAULT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp(),
   `date_updated` datetime DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `archive_list`
---
-
-INSERT INTO `archive_list` (`id`, `archive_code`, `curriculum_id`, `year`, `title`, `abstract`, `members`, `banner_path`, `document_path`, `status`, `student_id`, `date_created`, `date_updated`) VALUES
-(1, '2021120001', 1, 2021, 'Sample Project 101', '&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit at ipsum vitae malesuada. Fusce vitae bibendum diam. Praesent non eros purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et semper velit, pharetra efficitur eros. Aenean vel dignissim eros, sit amet pellentesque dolor. Quisque tincidunt ultricies velit sit amet fringilla. Nunc id lobortis diam, nec finibus neque. Curabitur faucibus feugiat placerat. Nunc at auctor nisi. Nunc maximus cursus mi a lacinia. Fusce eget maximus metus. Duis a tincidunt turpis. Integer dictum suscipit fringilla. Nam a eros arcu.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', '&lt;p&gt;&lt;b&gt;Project Manager&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;-John D Smith&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Members:&nbsp;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;-James Miller&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;-Mike Williams&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;-George Wilson&lt;/b&gt;&lt;/p&gt;', 'uploads/banners/archive-1.png?v=1639208103', 'uploads/pdf/archive-1.pdf?v=1639208103', 1, 1, '2021-12-11 14:57:22', '2021-12-11 16:07:44'),
-(2, '2021120002', 1, 2020, 'Sample 102', '&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px;&quot;&gt;In hac habitasse platea dictumst. Curabitur commodo nunc ac diam laoreet tempor. Donec sollicitudin lorem ullamcorper pretium ultrices. In varius risus in erat bibendum commodo. Ut volutpat est a mi volutpat molestie. In blandit, leo ut gravida vulputate, metus enim rutrum nunc, id mollis felis libero eu enim. Aenean placerat quis sapien sit amet blandit. Sed nec lorem efficitur, congue lorem vitae, egestas justo. Cras pulvinar, sapien vitae maximus porta, nibh libero porta risus, lobortis porta ante sapien eu massa.&lt;/p&gt;&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px;&quot;&gt;Aliquam laoreet condimentum felis eu tristique. Sed a massa nulla. Donec aliquet id ante vel porta. Vestibulum maximus dictum aliquam. Sed molestie lobortis ultrices. Nunc commodo dui nunc, a tincidunt lacus molestie eget. Nullam metus enim, accumsan ac iaculis et, sollicitudin vitae erat. Praesent molestie imperdiet libero, vel congue velit fringilla quis. Suspendisse sollicitudin aliquet enim nec elementum. Morbi nec aliquet mauris. Donec eleifend metus ex.&lt;/p&gt;&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px;&quot;&gt;In sollicitudin elementum ante, ut elementum tortor porttitor sit amet. Vestibulum vehicula scelerisque porta. Maecenas vestibulum purus orci, in imperdiet velit congue fermentum. Nulla aliquam ante ut erat sagittis, et porta arcu condimentum. Praesent scelerisque nunc vel felis malesuada venenatis. Donec blandit mauris eros, eget placerat nunc convallis a. Etiam ac elementum arcu. In varius fringilla massa, at volutpat nisi blandit vel. In hac habitasse platea dictumst. Nunc blandit venenatis felis, a mattis nunc. Vestibulum a tempus mi. In interdum semper laoreet. Ut vitae urna arcu. Suspendisse ac arcu quam.&lt;/p&gt;', '&lt;ul&gt;&lt;li&gt;Sample 101&lt;/li&gt;&lt;li&gt;Sample 102&lt;/li&gt;&lt;li&gt;Sample 103&lt;/li&gt;&lt;li&gt;Sample 104&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;', 'uploads/banners/archive-3.png?v=1639212829', 'uploads/pdf/archive-3.pdf?v=1639212829', 1, 1, '2021-12-11 16:53:48', '2021-12-13 14:21:11'),
-(3, '2021120003', 1, 2020, 'Online Point of Sale System for XYZ Corp.', '&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px;&quot;&gt;Curabitur a lorem vitae arcu tincidunt suscipit. Vivamus posuere sodales diam, iaculis tempus sem rhoncus ac. Aenean elementum dolor sed augue gravida, vel ultrices mi sollicitudin. Sed semper sapien non tellus gravida imperdiet. Ut condimentum libero elementum ligula congue, rhoncus euismod orci ultricies. Suspendisse potenti. Vivamus rhoncus iaculis justo, non ultricies odio iaculis malesuada. Vivamus vitae odio nec est consectetur elementum. Nam et tellus pellentesque, efficitur nibh nec, sodales nulla. Phasellus vel nunc orci. Vestibulum vitae libero felis.&lt;/p&gt;&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px;&quot;&gt;Fusce tellus odio, pellentesque id justo at, euismod eleifend nulla. Sed at dui non dolor porta tempus vel at justo. Curabitur condimentum, ipsum eu vehicula eleifend, lectus libero rhoncus risus, mollis porta nulla tortor vitae felis. Cras molestie lectus diam, fermentum posuere tellus facilisis ac. Nulla eu ante venenatis orci egestas tempor. Sed sed ante nisl. Nulla vitae risus quam. Donec eu neque eget urna pellentesque maximus. Mauris et lacus elit. Vivamus ligula leo, rutrum vitae semper id, gravida in dui. Maecenas augue arcu, egestas non dolor ut, fermentum rutrum sem. Duis a augue et mauris efficitur finibus nec nec neque. Nulla pulvinar, lorem sed efficitur pulvinar, nunc ex pellentesque eros, ac volutpat mauris felis sed nunc. Phasellus porta quam a nulla bibendum, a volutpat nisi tincidunt. Fusce sed semper ante, ullamcorper varius eros. In feugiat est sit amet mi accumsan, vel tempus eros pulvinar.&lt;/p&gt;&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px;&quot;&gt;Aenean rhoncus massa vel convallis suscipit. Etiam pharetra, tortor vitae ornare tincidunt, ipsum purus blandit elit, a interdum libero felis id lectus. Curabitur eleifend pulvinar eros non mollis. Phasellus porttitor sollicitudin metus quis congue. Maecenas sollicitudin fermentum ullamcorper. Aenean blandit vehicula diam, a porta nisl auctor sed. Phasellus dignissim tristique mi et faucibus.&lt;/p&gt;', '&lt;p&gt;&lt;b&gt;Project Manager&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Claire Blake&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;b&gt;QA&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Samantha Lou&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;b&gt;Programmers&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;James Dein&lt;/li&gt;&lt;li&gt;Michael Bennet&lt;/li&gt;&lt;li&gt;Jenny Cooper&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;b&gt;Researchers&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ana Mae Clayton&lt;/li&gt;&lt;li&gt;Cynthia Anthony&lt;/li&gt;&lt;/ul&gt;', 'uploads/banners/archive-3.png?v=1639377036', 'uploads/pdf/archive-3.pdf?v=1639377036', 1, 3, '2021-12-13 14:30:35', '2021-12-13 14:34:05');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -66,7 +57,7 @@ CREATE TABLE `curriculum_list` (
   `status` tinyint(1) NOT NULL DEFAULT 1,
   `date_created` datetime NOT NULL DEFAULT current_timestamp(),
   `date_updated` datetime DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `curriculum_list`
@@ -94,7 +85,7 @@ CREATE TABLE `department_list` (
   `status` tinyint(1) NOT NULL DEFAULT 1,
   `date_created` datetime NOT NULL DEFAULT current_timestamp(),
   `date_updated` datetime DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `department_list`
@@ -128,15 +119,7 @@ CREATE TABLE `student_list` (
   `avatar` text NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp(),
   `date_updated` datetime DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `student_list`
---
-
-INSERT INTO `student_list` (`id`, `firstname`, `middlename`, `lastname`, `department_id`, `curriculum_id`, `email`, `password`, `gender`, `status`, `avatar`, `date_created`, `date_updated`) VALUES
-(1, 'John', 'D', 'Smith', 5, 1, 'jsmith@sample.com', '1254737c076cf867dc53d60a0364f38e', 'Male', 1, 'uploads/student-1.png?v=1639202693', '2021-12-11 12:50:03', '2021-12-11 14:04:53'),
-(3, 'Claire', 'C', 'Blake', 5, 1, 'cblake@sample.com', '4744ddea876b11dcb1d169fadf494418', 'Female', 1, 'uploads/student-3.png?v=1639377518', '2021-12-13 10:42:51', '2021-12-13 14:38:38');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -148,24 +131,24 @@ CREATE TABLE `system_info` (
   `id` int(30) NOT NULL,
   `meta_field` text NOT NULL,
   `meta_value` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `system_info`
 --
 
 INSERT INTO `system_info` (`id`, `meta_field`, `meta_value`) VALUES
-(1, 'name', 'Online Thesis Archiving System - PHP'),
-(6, 'short_name', 'OTAS - PHP'),
+(1, 'name', 'Smart Archive: Innovative Web-Based Archiving System for Eastern Visayas State University - Carigara Campus Theses'),
+(6, 'short_name', 'Smart Archive'),
 (11, 'logo', 'uploads/logo-1638840281.png'),
 (13, 'user_avatar', 'uploads/user_avatar.jpg'),
 (14, 'cover', 'uploads/cover-1638840281.png'),
 (15, 'content', 'Array'),
-(16, 'email', 'info@university101.com'),
-(17, 'contact', '09854698789 / 78945632'),
+(16, 'email', 'evsucc@gmail.com'),
+(17, 'contact', '09261902275'),
 (18, 'from_time', '11:00'),
 (19, 'to_time', '21:30'),
-(20, 'address', 'Under the Tree, Here Street, There City, Anywhere 1014');
+(20, 'address', 'Brgy. Barugohay Norte. Carigara, Leyte');
 
 -- --------------------------------------------------------
 
@@ -186,7 +169,7 @@ CREATE TABLE `users` (
   `status` int(1) NOT NULL DEFAULT 1 COMMENT '0=not verified, 1 = verified',
   `date_added` datetime NOT NULL DEFAULT current_timestamp(),
   `date_updated` datetime DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
