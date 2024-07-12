@@ -9,7 +9,7 @@
                     <dl>
                         <dt class="text-muted"><i class="fa fa-envelope"></i> Email</dt>
                         <dd class="pr-4"><?= $_settings->info('email') ?></dd>
-                        <dt class="text-muted"><i class="fa fa-phone"></i> Contact #</dt>
+                        <dt class="text-muted"><i class="fa fa-phone"></i> Contact Number</dt>
                         <dd class="pr-4"><?= $_settings->info('contact') ?></dd>
                         <dt class="text-muted"><i class="fa fa-map-marked-alt"></i> Location</dt>
                         <dd class="pr-4"><?= $_settings->info('address') ?></dd>
